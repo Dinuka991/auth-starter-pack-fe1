@@ -1,9 +1,21 @@
-<div >
-  <div>
-    User Name : <input type="text" name="username" [(ngModel)]="username">
-    Password : <input type="password" name="password" [(ngModel)]="password">
+<html>
+<body>
+<section class="row justify-content-center" >
+    <section class=" col-xl-4 col-lg-5 col-md-8 col-sm-10 col-12">
+  <div >
+  
+    
+      User Name : <input type="text" name="username" [(ngModel)]="username">
+  
+      Password : <input type="password" name="password" [(ngModel)]="password"><br><br>
+
+      <div class="form-group">
+    
+      <button  (click)=checkLogin() type="button" class="btn btn-primary float-right"> Login</button>
+    </div>
+
   </div>
-  <button (click)=checkLogin() class="btn btn-success">
-    Login
-  </button>
-</div>
+</section>
+</section>
+</body>
+</html>
