@@ -4,18 +4,24 @@
     <section class=" col-xl-4 col-lg-5 col-md-8 col-sm-10 col-12">
   <div >
   
-    
-      User Name : <input type="text" name="username" [(ngModel)]="username">
-  
-      Password : <input type="password" name="password" [(ngModel)]="password"><br><br>
-
+    <form>
       <div class="form-group">
+        
+        User Name : <input type="text" name="username" [(ngModel)]="username">
+      </div>
+      <div class="form-group">
+        Password : <input type="password" name="password" [(ngModel)]="password"><br><br>
+      </div>
     
       <button  (click)=checkLogin() type="button" class="btn btn-primary float-right"> Login</button>
-    </div>
+    </form>
+    
+     
 
   </div>
 </section>
 </section>
 </body>
 </html>
+
+
