@@ -18,15 +18,17 @@ export class AuthComponent implements OnInit {
   constructor( private authService: AuthService , private router: Router  ) { }
 
   ngOnInit() {
+
   }
   checkLogin() {
-    console.log(this.username);
-    console.log(this.password);
-    console.log(1111111111111111111111111111111111);
 
+    let reqIbj = {
+      'username': this.username,
+      'password': this.password  
+    }
+
+    if ( this.authService.authenticationserviceWithJWT(reqIbj)) {
   
-    if ( this.authService.authenticationservice(this.username, this.password)) {
-      console.log(1);
       this.router.navigate(['']);
       this.invalidLogin = false;
     } else {
