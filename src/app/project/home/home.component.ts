@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { AuthService } from '../auth.service';
 
 @Component({
@@ -8,7 +9,7 @@ import { AuthService } from '../auth.service';
 })
 export class HomeComponent implements OnInit {
 
-  constructor( private authService: AuthService) { }
+  constructor( private authService: AuthService ,  private router: Router) { }
   title = 'auth-starter-pack1';
 
   greeting = {id: 'XXX',
@@ -16,9 +17,22 @@ export class HomeComponent implements OnInit {
             };
 
   ngOnInit() {
+    
+    this.authService.users().subscribe(
+      (data: any) => {
+        console.log(data);
+        console.log(data[0])
+        this.greeting.id = data[0].id;
+        console.log(this.greeting.id)
+        this.greeting.content = data[0].username;
+      }
+    )
+   
   }
+  logout(){
+    localStorage.removeItem('user');
+    this.router.navigate(['/login']);
 
-    testApi(){
 
-    }
+  }
 }
