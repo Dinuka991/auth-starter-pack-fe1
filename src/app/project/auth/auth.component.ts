@@ -26,14 +26,21 @@ export class AuthComponent implements OnInit {
       'username': this.username,
       'password': this.password  
     }
+    console.log(reqIbj);
 
-    if ( this.authService.authenticationserviceWithJWT(reqIbj)) {
-  
-      this.router.navigate(['']);
-      this.invalidLogin = false;
-    } else {
-      this.invalidLogin = true;
-    }
+
+   this.authService.login(this.username, this.password).subscribe(
+     (data: any) =>{
+       if(data){
+        this.router.navigate(['']);
+        this.invalidLogin = false;
+       }
+       else{
+        this.invalidLogin = true; 
+       }
+     }
+   );
+
   }
 
 

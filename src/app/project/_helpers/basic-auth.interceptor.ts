@@ -14,8 +14,8 @@ export class BasicAuthInterceptor implements HttpInterceptor {
     intercept(request: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
       
         
-        let currentUser =  JSON.parse(sessionStorage.getItem('user'))
-
+        let currentUser =  JSON.parse(localStorage.getItem('user'))
+       console.log(currentUser);
           if(currentUser && currentUser.token){
               console.log('loggggggggggggggg')
             request = request.clone({
