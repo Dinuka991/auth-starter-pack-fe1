@@ -26,7 +26,7 @@ export class AuthComponent implements OnInit {
       'username': this.username,
       'password': this.password  
     }
-    console.log(reqIbj);
+   
 
 
    this.authService.login(this.username, this.password).subscribe(
