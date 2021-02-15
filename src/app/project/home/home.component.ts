@@ -20,10 +20,8 @@ export class HomeComponent implements OnInit {
     
     this.authService.users().subscribe(
       (data: any) => {
-        console.log(data);
-        console.log(data[0])
+      
         this.greeting.id = data[0].id;
-        console.log(this.greeting.id)
         this.greeting.content = data[0].username;
       }
     )
